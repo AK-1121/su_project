@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Add item</title>
+    </head>
+    <body>
+        <h1>Add element:</h1>
+        <form method='POST'>
+            <input name='item_name' id='id_item_name' placeholder = 'Enter item name'/>
+            {% csrf_token %}
+        </form>
+    </body>
+</html>
+
