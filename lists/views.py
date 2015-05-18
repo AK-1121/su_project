@@ -4,6 +4,7 @@ from django import forms
 
 
 class ImageUploadForm(forms.Form):
+    item_name = forms.CharField(max_length = 50)
     image_file = forms.ImageField()
 
 
@@ -17,7 +18,8 @@ def add_item(request):
         Item.objects.create(name=request.POST.get('item_name'),
                            image = request.POST.get('image', False))
             #return HttpResponseRedirect('/lists/add_item.html')
-    return render(request, 'lists/add_item.html')
+    #return render(request, 'lists/add_item.html')
+    return render(request, 'lists/upload.html', {'form': form})
 
 
 def show_add_page(request):
